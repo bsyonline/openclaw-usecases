@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-label="登录">
+        <header class="card__header">
+          <h1 class="card__title">登录</h1>
+          <p class="card__subtitle">欢迎回来，请输入你的账号信息</p>
+        </header>
+
+        <form id="loginForm" class="form" novalidate>
+          <div class="field">
+            <label class="field__label" for="username">用户名 / 邮箱</label>
+            <input
+              class="field__input"
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              placeholder="name@company.com"
+              required
+            />
+            <p class="field__hint" id="usernameHint">请输入用户名或邮箱</p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">密码</label>
+            <div class="password">
+              <input
+                class="field__input password__input"
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="请输入密码"
+                minlength="6"
+                required
+              />
+              <button class="password__toggle" type="button" id="togglePwd" aria-label="显示密码">
+                显示
+              </button>
+            </div>
+            <p class="field__hint" id="passwordHint">密码至少 6 位</p>
+          </div>
+
+          <div class="row">
+            <label class="checkbox">
+              <input id="remember" name="remember" type="checkbox" />
+              <span>记住我</span>
+            </label>
+            <a class="link" href="#" aria-disabled="true" title="示例页面未实现">忘记密码？</a>
+          </div>
+
+          <button class="btn" type="submit" id="submitBtn">登录</button>
+
+          <div class="status" role="status" aria-live="polite" id="status"></div>
+
+          <footer class="card__footer">
+            <span>还没有账号？</span>
+            <a class="link" href="#" aria-disabled="true" title="示例页面未实现">注册</a>
+          </footer>
+        </form>
+      </section>
+
+      <footer class="page__footer">
+        <small>openclaw-usecases · coding/login</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
