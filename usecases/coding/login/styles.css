@@ -7,8 +7,8 @@
   --hint: rgba(255, 255, 255, 0.55);
   --danger: #ff4d6d;
   --ok: #34d399;
-  --accent: #60a5fa;
-  --accent2: #a78bfa;
+  --accent: #22c55e;
+  --accent2: #14b8a6;
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --radius: 16px;
   --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -156,7 +156,7 @@ body {
 .checkbox input { accent-color: var(--accent); }
 
 .link {
-  color: rgba(96, 165, 250, 0.95);
+  color: rgba(34, 197, 94, 0.95);
   text-decoration: none;
   font-size: 13px;
 }
