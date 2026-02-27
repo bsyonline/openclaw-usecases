@@ -57,11 +57,20 @@
     return ok;
   }
 
+  function setHidden(el, shouldHide) {
+    if (!el) return;
+    if (shouldHide) {
+      el.setAttribute('hidden', '');
+    } else {
+      el.removeAttribute('hidden');
+    }
+  }
+
   toggle.addEventListener('click', () => {
     const isPwd = password.type === 'password';
     password.type = isPwd ? 'text' : 'password';
-    if (showIcon) showIcon.hidden = isPwd;
-    if (hideIcon) hideIcon.hidden = !isPwd;
+    setHidden(showIcon, isPwd);
+    setHidden(hideIcon, !isPwd);
     if (toggleText) toggleText.textContent = isPwd ? '隐藏密码' : '显示密码';
     toggle.setAttribute('aria-label', isPwd ? '隐藏密码' : '显示密码');
     toggle.setAttribute('aria-pressed', String(isPwd));
