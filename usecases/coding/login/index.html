@@ -42,8 +42,50 @@
                 minlength="6"
                 required
               />
-              <button class="password__toggle" type="button" id="togglePwd" aria-label="显示密码">
-                显示
+              <button class="password__toggle" type="button" id="togglePwd" aria-label="显示密码" aria-pressed="false">
+                <svg
+                  class="password__icon password__icon--show"
+                  id="togglePwdShowIcon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                  fill="none"
+                >
+                  <path
+                    d="M2.5 12S6.5 5.5 12 5.5 21.5 12 21.5 12 17.5 18.5 12 18.5 2.5 12 2.5 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3.2"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                </svg>
+                <svg
+                  class="password__icon password__icon--hide"
+                  id="togglePwdHideIcon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                  hidden
+                  fill="none"
+                >
+                  <path
+                    d="M10.6 6.1A8.9 8.9 0 0 1 12 5.5c5.5 0 9.5 6.5 9.5 6.5a17.4 17.4 0 0 1-2.6 3.2M14.7 14.9A3.2 3.2 0 0 1 9.1 9.3M6.2 8A17.4 17.4 0 0 0 2.5 12s4 6.5 9.5 6.5a8.9 8.9 0 0 0 4-.9M3.5 3.5l17 17"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="sr-only" id="togglePwdText">显示密码</span>
               </button>
             </div>
             <p class="field__hint" id="passwordHint">密码至少 6 位</p>

@@ -3,6 +3,9 @@
   const username = document.getElementById('username');
   const password = document.getElementById('password');
   const toggle = document.getElementById('togglePwd');
+  const toggleText = document.getElementById('togglePwdText');
+  const showIcon = document.getElementById('togglePwdShowIcon');
+  const hideIcon = document.getElementById('togglePwdHideIcon');
   const status = document.getElementById('status');
   const submitBtn = document.getElementById('submitBtn');
 
@@ -57,8 +60,11 @@
   toggle.addEventListener('click', () => {
     const isPwd = password.type === 'password';
     password.type = isPwd ? 'text' : 'password';
-    toggle.textContent = isPwd ? '隐藏' : '显示';
+    if (showIcon) showIcon.hidden = isPwd;
+    if (hideIcon) hideIcon.hidden = !isPwd;
+    if (toggleText) toggleText.textContent = isPwd ? '隐藏密码' : '显示密码';
     toggle.setAttribute('aria-label', isPwd ? '隐藏密码' : '显示密码');
+    toggle.setAttribute('aria-pressed', String(isPwd));
     password.focus();
   });
 
